@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eO9-Rv-RHz">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat App-->
+        <scene sceneID="OqU-lR-lTN">
+            <objects>
+                <viewController id="eO9-Rv-RHz" customClass="ChatApp" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8gV-AO-gTc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vz8-Ip-20I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HFX-1c-wou">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jj1-q4-Xri">
+                                <rect key="frame" x="0.0" y="28" width="414" height="572"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.049691020330000002" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="1" green="0.049691020330000002" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="1i1-0Z-bSn" customClass="ChatBubble" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1i1-0Z-bSn" id="35s-eP-P4R">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkw-JT-JwA">
+                                                    <rect key="frame" x="83" y="0.0" width="331" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbM-61-SIx">
+                                                    <rect key="frame" x="103" y="35" width="288" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BbM-61-SIx" secondAttribute="bottom" constant="16" id="RjQ-tZ-Fbt"/>
+                                                <constraint firstItem="BbM-61-SIx" firstAttribute="leading" secondItem="35s-eP-P4R" secondAttribute="leadingMargin" constant="95" identifier="myTextLeading" id="geH-VH-I6R"/>
+                                                <constraint firstItem="BbM-61-SIx" firstAttribute="top" secondItem="35s-eP-P4R" secondAttribute="topMargin" constant="27" id="idu-DH-4H1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BbM-61-SIx" secondAttribute="trailing" constant="15" identifier="myTextTrailing" id="uNi-qo-XyG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myimage" destination="Pkw-JT-JwA" id="4IR-NH-33f"/>
+                                            <outlet property="mytext" destination="BbM-61-SIx" id="AKF-ug-7Lo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vg-46-2pA">
+                                <rect key="frame" x="0.0" y="602" width="414" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BYj-Of-xDB">
+                                        <rect key="frame" x="0.0" y="0.0" width="372" height="134"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.92648579980860468" blue="1" alpha="0.1796875" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDv-AK-FJf">
+                                        <rect key="frame" x="370" y="0.0" width="44" height="134"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="⬆︎"/>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="eO9-Rv-RHz" eventType="touchUpInside" id="5L3-qG-sXs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86462106374481351" green="1" blue="0.99914515765026646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="ZDv-AK-FJf" id="1Gi-V6-4nh"/>
+                        <outlet property="messagecontent" destination="BYj-Of-xDB" id="jGl-6E-LQM"/>
+                        <outlet property="tableView" destination="Jj1-q4-Xri" id="6Gy-Df-JdO"/>
+                        <outlet property="viewofui" destination="1vg-46-2pA" id="QKr-Do-FX7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5c5-7J-2Ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508.69565217391306" y="325.27173913043481"/>
+        </scene>
+    </scenes>
+</document>
